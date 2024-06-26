@@ -45,11 +45,13 @@ The repository is organized as follows:
 
 ```
 root
-│   LICENSE
-│   README.md
-│   package.json
 │   .eslintrc.js
+│   .gitignore
 │   jest.config.js
+│   LICENSE
+│   package.json
+│   package-lock.json
+│   README.md
 │
 └───subject1
 │   │   README.md
