@@ -98,3 +98,19 @@ Please adhere to the following coding conventions:
 - Ensure your code passes the ESLint checks defined in .eslintrc.js.
 - Write meaningful commit messages.
 - Use descriptive variable and function names.
+
+# Continuous Integration with GitHub Actions
+
+This repository is configured to use GitHub Actions for continuous integration. The workflow is defined in the `.github/workflows/ci.yml` file.
+
+## Workflow Steps
+
+1. **Install dependencies:** Installs the project dependencies using `npm install`, caching them based on `package-lock.json`.
+2. **Run ESLint:** Lints the code to ensure it adheres to the Airbnb style guide.
+3. **Run tests:** Runs the test suite using Jest.
+
+## Triggering the Workflow
+
+The workflow is triggered on any push to the repository.
+
+You can view the status of the workflow in the "Actions" tab of your repository on GitHub.
