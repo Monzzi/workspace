@@ -7,4 +7,5 @@ introductoria de Albañiles Digitales.
 
 1. [Instalación de Visual Studio Code](vscode_guide.md)
 2. [Guía de docker](docker_guide.md)
-3. [Recursos de clase](class-resources)
+3. [Guía de GitHub](github.md)
+4. [Recursos de clase](class-resources)
