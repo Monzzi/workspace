@@ -11,12 +11,12 @@ listos para empezar a usar GitHub.
 
    Si no tienes una cuenta en GitHub, ve a github.com
    y regístrate. **Importante**: el email que uses para registrarte en
-   GitHub es el mismo que utilizaremos más adelante para configurar Git en tu PC.
+   GitHub es el mismo que utilizaremos más adelante para configurar git en tu PC.
 
-2. Instalación y Configuración de Git en Ubuntu.
+2. Instalación y Configuración de git en Ubuntu.
 
    Abre el terminal en tu máquina Ubuntu y ejecuta los siguientes comandos
-   para instalar Git:
+   para instalar git:
 
    ```bash
    sudo apt update
@@ -26,7 +26,7 @@ listos para empezar a usar GitHub.
 3. Configurar git con tu nombre y email.
 
    Ejecuta los siguientes comandos en el terminal para configurar tu nombre
-   y email en Git:
+   y email en git:
 
    ```bash
    git config --global user.name "Tu Nombre"
@@ -84,9 +84,6 @@ listos para empezar a usar GitHub.
      Ve a tu perfil de GitHub y haz clic en `Settings` -> `SSH and GPG keys`
      -> `New SSH key` y pega la clave SSH en el campo `Key`.
 
-     Pega la clave en el campo correspondiente y dale un nombre, por ejemplo,
-     “Mi clave SSH de Ubuntu”.
-
    - Probar la conexión SSH con GitHub.
 
      Para probar la conexión SSH con GitHub, ejecuta el siguiente comando:
@@ -109,8 +106,6 @@ listos para empezar a usar GitHub.
    cd ~/projects
    ```
 
-7. Clonar los repositorios de la Organización.
-
    Ahora vamos a clonar los repositorios `workspace` y `common-project-back-front`
    desde la organización del bootcamp en GitHub.
 
@@ -126,7 +121,7 @@ listos para empezar a usar GitHub.
      git clone git@github.com:albaniles-digitales/common-project-back-front.git
      ```
 
-8. Crear Repositorios Personales para Workspace y Proyecto Final.
+7. Crear Repositorios Personales para Workspace y Proyecto Final.
 
    Cada alumno creará repositorios personales en sus cuentas de GitHub, que usaremos
    para trabajar durante el bootcamp.
@@ -145,7 +140,7 @@ listos para empezar a usar GitHub.
      Si es necesario, sigue las instrucciones para habilitar GitHub Actions, lo cual
      permitirá que puedas automatizar tareas como la ejecución de pipelines de CI/CD.
 
-9. Cambiar los Remotes, Hacer Commit y Push.
+8. Cambiar los Remotes, Hacer Commit y Push.
 
    Ahora que tienes tus repositorios personales, vamos a cambiar los remotos
    de los repositorios clonados en tu PC para que apunten a tus repositorios
@@ -163,8 +158,6 @@ listos para empezar a usar GitHub.
    git remote set-url origin git@github.com:<tu-usuario>/workspace.git
    ```
 
-   Repite el proceso para el repositorio `common-project-back-front`.
-
    Ahora, haz un commit y un push de los cambios a tu repositorio personal:
 
    ```bash
@@ -175,14 +168,16 @@ listos para empezar a usar GitHub.
 
    Esto subirá tu primer commit a tu repositorio personal en GitHub.
 
-10. ¡Listo!
+   Repite el mismo proceso para el repositorio `common-project-back-front`.
 
-    Finalmente, revisa tu cuenta de GitHub para asegurarte de que los
-    cambios se han subido correctamente y que GitHub Actions está configurado
-    y funcionando.
-    En tus repositorios personales (`workspace` y `final-project`), deberías
-    ver el commit que acabas de hacer y los pipelines de CI/CD ejecutándose.
+9. ¡Listo!
 
-    Ahora estás listo para empezar a trabajar en tus proyectos de programación
-    durante el bootcamp. Si tienes alguna duda, no dudes en preguntar a tu
-    profesor o compañeros de clase.
+   Finalmente, revisa tu cuenta de GitHub para asegurarte de que los
+   cambios se han subido correctamente y que GitHub Actions está configurado
+   y funcionando.
+   En tus repositorios personales (`workspace` y `final-project`), deberías
+   ver el commit que acabas de hacer y los pipelines de CI/CD ejecutándose.
+
+   Ahora estás listo para empezar a trabajar en tus proyectos de programación
+   durante el bootcamp. Si tienes alguna duda, no dudes en preguntar a tu
+   profesor o compañeros de clase.

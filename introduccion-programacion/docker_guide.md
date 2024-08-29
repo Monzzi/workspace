@@ -108,3 +108,11 @@ docker stop metube && docker rm metube
 Jugar con cualquier docker que vean por internet e intentar
 levantarlo en local.
 Pueden usar ejemplos del repositorio compartido anteriormente.
+
+Propuestas:
+- Wordpress
+- RetroPie
+- Etherpad
+- Nextcloud
+- Pi-hole
+- Bitwarden
