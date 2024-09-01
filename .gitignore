@@ -83,7 +83,6 @@ bower_components/
 
 # Project directories
 .idea/
-.vscode/
 .history/
 .DS_Store
 
