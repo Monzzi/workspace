@@ -1,22 +1,20 @@
-function elegir(productos) {
-
-let resultado = {
-    switch (productos) {    
+function elegir(productos) { 
+    switch (productos)  {
     case "Chaqueta Goretex":
-        return console.log("El precio de la chaqueta es de 250€);         
+        return document.getElementById("precioChaqueta").textContent=("El precio de la chaqueta es de 250€")
         break;
 
-    case "Botas Txirukas":
-        return console.log("El precio de las botas es de 150€");
+    case "Botas Chiruca":
+        return document.getElementById("precioBotas").textContent=("El precio de las botas es de 150€")
         break;
 
-    case "Motxila Serval":
-        return console.log("El precio de la motxila es de 100€");
+    case "Mochila Serval":
+        return document.getElementById("precioMochila").textContent=("El precio de la mochila es de 100€")
         break;      
 
     case "Plumas RocNeige":
-       return console.log("El precio de las plumas es de 500€");
+       return document.getElementById("precioPlumas").textContent=("El precio del plumas es de 500€")
         break;    
-    }           
+        
 }
-
+}
