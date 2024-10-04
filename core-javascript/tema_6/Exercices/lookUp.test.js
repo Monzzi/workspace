@@ -1,16 +1,17 @@
 // Tests
 
 describe('lookup()', () => {
+  
     it("lookup(<login>, 'likes') should return likes for the specified user.", () => {
       const actual = lookup('norvig', 'likes');
       const expected = ['AI', 'Search', 'NASA', 'Mars'];
-  
+
       expect(actual).toEqual(expected);
     });
     it("lookup(<login>, 'lastName') should return the last name for the specified user", () => {
       const actual = lookup('knuth', 'lastName');
       const expected = 'Knuth';
-  
+
       expect(actual).toEqual(expected);
     });
     it('with unknown user should throw an error with the correct message', () => {
