@@ -16,6 +16,6 @@ function fizzbuzz(numero_dado) {
     }
     return result;
 }
-fizzbuzz('hola');
+fizzbuzz(15);
 
 module.exports = fizzbuzz;
