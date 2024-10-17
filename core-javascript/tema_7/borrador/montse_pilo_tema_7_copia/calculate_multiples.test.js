@@ -1,8 +1,9 @@
-/* eslint-disable camelcase */
-const { get_multiples, interact_with_user } = require('./calculate_multiples'); // Importar ambas funciones
-const prompt = require('prompt-sync');
+est.mock('prompt-sync', () => {
+  return () => jest.fn();
+});
 
-jest.mock('prompt-sync'); // Mockear el módulo prompt-sync
+const prompt = require('prompt-sync')();  // Asegúrate de requerir el mock
+const { interact_with_user } = require('./path_to_your_module');
 
 describe('get_multiples', () => {
   test('Must return an array with the correct multiples', () => {
@@ -30,7 +31,7 @@ describe('get_multiples', () => {
 // Tests para interact_with_user
 describe('interact_with_user', () => {
   beforeEach(() => {
-    prompt.mockImplementation(() => jest.fn()); // Inicializa el mock
+    prompt.mockClear(); // Limpia el mock antes de cada test
   });
 
   test('Must log the correct array of multiples', () => {
