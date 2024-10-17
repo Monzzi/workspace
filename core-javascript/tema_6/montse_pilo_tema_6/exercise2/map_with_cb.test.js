@@ -1,6 +1,5 @@
 const map_with_cb = require('./map_with_cb.js');
 
-
 test('throws an error if first argument is not an array', () => {
   expect(() => map_with_cb('string', ((item) => item * 2))).toThrow('The first parameter must be an array and the second must be a function.');
 });
