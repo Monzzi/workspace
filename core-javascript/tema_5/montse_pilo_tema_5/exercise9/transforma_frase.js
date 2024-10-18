@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 function titulo(string_dado) {
   const string_separado = string_dado.split(' ');
   let resultado = '';
@@ -9,15 +10,13 @@ function titulo(string_dado) {
   return resultado.trim();
 }
 
-    document.getElementById('boton_transformar').addEventListener('click', function () {
-    const frase_usuario = document.getElementById('input_usuario_frase').value;
+document.getElementById('boton_transformar').addEventListener('click', function () {
+  const frase_usuario = document.getElementById('input_usuario_frase').value;
 
-        if (!frase_usuario) {
-        document.getElementById('resultado').innerHTML = 'Por favor, ingresa una frase válida.';
-        return;
-        }
-
-        const resultado = titulo(frase_usuario);
-        document.getElementById('resultado').innerHTML = resultado;
-
+  if (!frase_usuario) {
+    document.getElementById('resultado').innerHTML = 'Por favor, ingresa una frase válida.';
+    return;
+  }
+  const resultado = titulo(frase_usuario);
+  document.getElementById('resultado').innerHTML = resultado;
 });

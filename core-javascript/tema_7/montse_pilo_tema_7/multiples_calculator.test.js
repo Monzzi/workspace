@@ -1,4 +1,5 @@
-const { get_multiples, ejecutarPrograma } = require('./multiples_calculator'); // Importar tus funciones
+/* eslint-disable camelcase */
+const { get_multiples, execute_program } = require('./multiples_calculator'); // Importar tus funciones
 
 jest.mock('readline', () => {
   const mReadline = {
@@ -17,42 +18,39 @@ jest.mock('readline', () => {
   return mReadline;
 });
 
-describe('Pruebas para la función get_multiples', () => {
-  test('debería devolver un array de múltiplos de 3', () => {
+describe('Tests for the function get_multiples', () => {
+  test('should return an array of 5 multiples of 3', () => {
     expect(get_multiples(5, 3)).toEqual([3, 6, 9, 12, 15]);
   });
 
-  test('debería devolver un array de 1 múltiplo si el tamaño es 1', () => {
+  test('should return an array of 1 multiple if size is 1', () => {
     expect(get_multiples(1, 3)).toEqual([3]);
   });
-  test('debería lanzar un error si el size es 0 o es negativo', () => {
-    expect(() => get_multiples(-1, 2)).toThrow('Por favor, introduce valores válidos.');
-    expect(() => get_multiples(0, 2)).toThrow('Por favor, introduce valores válidos.');
+  test('should throw an error if size is 0 or negative', () => {
+    expect(() => get_multiples(-1, 2)).toThrow('Please enter valid values.');
+    expect(() => get_multiples(0, 2)).toThrow('Please enter valid values.');
   });
 
-  test('debería devolver un error si los inputs están vacios', () => {
-    expect(() => get_multiples()).toThrow('Por favor, introduce valores válidos.');
+  test('should return an error if the inputs are empty', () => {
+    expect(() => get_multiples()).toThrow('Please enter valid values.');
   });
 
-  test('debería devolver un array vacío si el tamaño es 1', () => {
-    expect(get_multiples(1, 0)).toEqual([0]);
+  test('should return an array of the given number even if the size is 1', () => {
+    expect(get_multiples(1, 5)).toEqual([5]);
   });
 
-  test('debería funcionar con números negativos', () => {
+  test('should work with negative numbers', () => {
     expect(get_multiples(3, -2)).toEqual([-2, -4, -6]);
   });
 });
 
-test('debería devolver un array de múltiplos de 3 con tamaño 5', () => {
-  expect(get_multiples(5, 3)).toEqual([3, 6, 9, 12, 15]);
-});
+describe('Tests for the function execute_program', () => {
+  test('Should run the program and get the expected output', async () => {
+    console.log = jest.fn();
 
-describe('Pruebas para la función ejecutarPrograma', () => {
-  test('debería ejecutar el programa y obtener la salida esperada', async () => {
-    console.log = jest.fn(); // Mockear console.log para verificar la salida
+    await execute_program();
 
-    await ejecutarPrograma(); // Ejecutar la funció
-
-    expect(console.log).toHaveBeenCalledWith('Array de múltiplos: [3, 6, 9, 12, 15]');
+    expect(console.log).toHaveBeenCalledTimes(1);
+    expect(console.log).toHaveBeenCalledWith('Your multiples array: [3, 6, 9, 12, 15]');
   });
 });

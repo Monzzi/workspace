@@ -1,0 +1,21 @@
+
+
+ol>li:nth-child(even) {
+    background-color: grey;
+}
+
+/* pseudo-elemento marker */
+ul>li::marker {
+    content: '☠️ ';
+    font-size: 1em;
+}
+
+ul>li:last-child::marker {
+    content: '✔️ ';
+    font-size: 1em;
+}
+
+div {
+    border: 3px dotted black;
+    margin: 1em;
+}

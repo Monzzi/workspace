@@ -1,0 +1,6 @@
+table {
+  border-collapse: separate; /* Combina los bordes de las celdas */
+  border: 1px solid black; /* Borde de 1 piámetro */
+  width: 75%; /* Ancho completo */
+  text-align: center;
+}
