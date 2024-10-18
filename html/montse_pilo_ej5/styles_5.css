@@ -1,6 +1,32 @@
+td, th {
+  border-collapse: separate; /* Combina los bordes de las celdas */
+  border: 1px solid black; /* Borde de 1 piámetro */ /* Ancho completo */
+  text-align: center;
+  padding: 5px;
+}
+
 table {
+  font-family: Arial, Helvetica, sans-serif;
   border-collapse: separate; /* Combina los bordes de las celdas */
   border: 1px solid black; /* Borde de 1 piámetro */
-  width: 75%; /* Ancho completo */
-  text-align: center;
+}
+
+#almuerzo {
+  background-color: rgb(255, 255, 0);
+}
+
+.formacion {
+  background-color: rgb(120, 168, 216);
+}
+
+.daily {
+  background-color: rgb(232, 181, 202);
+}
+
+.horas {
+  background-color: rgb(142, 208, 49);
+}
+
+.sprint {
+  background-color: red;
 }

@@ -1,24 +1,48 @@
-function capitalize_last_name(name, last_name) {
-  if (typeof capitalize_last_name !== 'string') {
-    throw new TypeError('El argumento debe ser un string');
+/* eslint-disable prefer-template */
+/* eslint-disable camelcase */
+function capitalize_last_name(str) {
+  if (typeof str !== 'string') {
+    throw new TypeError('str must be a string');
   }
 
-  // Separar el nombre completo usando split
-  let parts = full_name.trim().split('');
-
-  if (parts.length !== 2) {
-    throw new ValueError('El string debe contener exactamente un nombre y un apellido');
+  class ValueError extends Error {
+    constructor(message) {
+      super(message);
+      this.name = 'ValueError';
+    }
   }
 
-  let first_name = parts[0];
-  let to_capitalize = parts[1];
+  const words = str.split(/\s+/);
+  if (words.length !== 2) {
+    throw new ValueError('str must consist of exactly two words');
+  }
 
-  return first_name.charAt(0).toUpperCase() + first_name.slice(1).toLowerCase() + " " + to_capitalize.toUpperCase();
+  const [firstName, lastName] = words;
+
+  // Retornar el nombre capitalizado y el apellido en mayúsculas
+  return `${firstName[0].toUpperCase()}${firstName.slice(1).toLowerCase()} ${lastName.toUpperCase()}`;
 }
 
-// Pruebas
-console.log(capitalize_last_name("marisa tomei"));
-console.log(capitalize_last_name("pol aguilera"));
-console.log(capitalize_last_name("rigoberta bandini"));
+try {
+  console.log(capitalize_last_name('marisa tomei'));
+  console.log(capitalize_last_name('pol aguilera'));
+  console.log(capitalize_last_name('marisaTomei'));
+} catch (error) {
+  console.error(error.name + ': ' + error.message);
+}
 
-module.exports = { capitalize_last_name };
+try {
+  console.log(capitalize_last_name('monzzi'));
+} catch (error) {
+  console.error(error.name + ': ' + error.message);
+}
+
+try {
+  console.log(capitalize_last_name(42));
+} catch (error) {
+  console.error(error.name + ': ' + error.message);
+}
+
+module.exports = {
+  capitalize_last_name,
+};

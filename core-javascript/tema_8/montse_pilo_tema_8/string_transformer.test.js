@@ -1,4 +1,4 @@
-const {Transform_string} = require('./string_transformer');
+const { Transform_string } = require('./string_transformer');
 
 test('Transform the string in an array 1 to 1', () => {
   expect(new Transform_string('hola').modify_array_1to1()).toEqual(['h', 'o', 'l', 'a']);

@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 class Transform_string {
   constructor(string) {
     this.string = string
@@ -45,4 +46,4 @@ console.log(new Transform_string('What is essential is invisible to the eye').re
 console.log(new Transform_string('What is essential is invisible to the eye').convert_into_words());
 console.log(new Transform_string('What is essential is invisible to the eye').invert_words_order());
 
-module.exports = {Transform_string};
+module.exports = { Transform_string };
