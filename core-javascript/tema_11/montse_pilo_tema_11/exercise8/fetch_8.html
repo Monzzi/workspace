@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 11 Ej. 8</title>
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .input-section {
+            margin-bottom: 20px;
+        }
+        .stats-section {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+        .titles-section {
+            margin-bottom: 30px;
+        }
+        .table-section {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #5c066f;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        tr:nth-child(even) {
+            background-color: #dfcad9;
+        }
+        #titlesList {
+            padding: 0;
+        }
+        #titlesList li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input-section">
+            <h1 id="fetchButton">¿Cuántos artículos se han recibido?</h1>
+        </div>
+
+        <div class="stats-section">
+            <p>Total de artículos recibidos: <span id="totalPosts">0</span></p>
+        </div>
+
+        <div class="titles-section">
+            <h2>Lista de Títulos</h2>
+            <ol id="titlesList"></ol>
+        </div>
+
+        <div class="table-section">
+            <h2>Tabla de Artículos</h2>
+            <table id="postsTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Contenido</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="fetch_8.js"></script>
+</body>
+</html>
