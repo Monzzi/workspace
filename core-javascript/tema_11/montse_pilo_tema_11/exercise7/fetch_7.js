@@ -12,7 +12,7 @@ function fetchPost(postId) {
       document.getElementById('content').textContent = data.body;
     })
     .catch(error => {
-      console.error('Error:', error);
+      console.log('Error:', error);
       document.getElementById('article').innerHTML = 'Error al cargar el artículo';
     });
 }

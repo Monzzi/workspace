@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados Login</title>
+
+        <style>
+            body {
+                background-color: rgb(80, 151, 223);
+                font-family: sans-serif;
+            }
+        </style>
+</head>
+
+<body>
+    <h3>Datos del Login</h3>
+    <br>
+    <p id="emailDisplay"></p>
+    <br>
+    <p id="passwordDisplay"></p>
+
+    <script>
+        // Recuperamos los datos desde sessionStorage
+        const email = sessionStorage.getItem('email');
+        const password = sessionStorage.getItem('password');
+
+        // Los mostramos en la página
+        document.getElementById('emailDisplay').textContent = `Email: ${email}`;
+        document.getElementById('passwordDisplay').textContent = `Password: ${password ? '******' : 'No ingresada'}`;
+    </script>
+
+</body>
+</html>

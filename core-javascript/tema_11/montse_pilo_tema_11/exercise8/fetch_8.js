@@ -20,7 +20,6 @@ function fetchAllPosts() {
         titlesList.appendChild(li);
       });
 
-      // Actualizar la tabla
       const tableBody = document.querySelector('#postsTable tbody');
       tableBody.innerHTML = '';
       posts.forEach(post => {
@@ -34,7 +33,7 @@ function fetchAllPosts() {
       });
     })
     .catch(error => {
-      console.error('Error:', error);
+      console.log('Error:', error);
       document.querySelector('.container').innerHTML = 'Error al cargar los artículos';
     });
 }

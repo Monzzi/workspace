@@ -1,0 +1,55 @@
+
+table {
+ border-collapse: collapse;
+}
+
+td, th {
+padding: 0;
+margin: 0;
+line-height: 0;
+}
+
+#primera {
+  filter: blur(5px);
+}
+
+#segunda {
+  filter: grayscale(100%);
+}
+
+#tercera {
+  filter: sepia(150%);
+}
+
+#cuarta {
+  filter: hue-rotate(90deg);
+}
+
+#quinta {
+  filter: invert(100%);
+}
+
+#sexta {
+  filter: opacity(40%);
+}
+
+#septima {
+  filter: saturate(300%);
+}
+
+#octava {
+  filter: contrast(400%);
+}
+
+#novena {
+  filter: brightness(300%);
+}
+
+#decima {
+  filter: drop-shadow(5px 5px 5px #f357ce);
+}
+
+#decimoprimera {
+  filter: brightness(120%) contrast(110%) blur(2px);;
+}
+

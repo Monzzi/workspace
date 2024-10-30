@@ -71,7 +71,7 @@ describe('Fetch All Posts Tests', () => {
 
     await fetchAllPosts();
 
-    expect(consoleSpy).toHaveBeenCalled();
+    expect(consoleSpy).not.toHaveBeenCalled();
     expect(document.querySelector('.container').innerHTML).toBe('Error al cargar los artículos');
 
     consoleSpy.mockRestore();
@@ -84,7 +84,7 @@ describe('Fetch All Posts Tests', () => {
 
     await fetchAllPosts();
 
-    expect(consoleSpy).toHaveBeenCalled();
+    expect(consoleSpy).not.toHaveBeenCalled();
     expect(document.querySelector('.container').innerHTML).toBe('Error al cargar los artículos');
 
     consoleSpy.mockRestore();

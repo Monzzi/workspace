@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 8 formulario 2 Encuesta</title>
+  <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <h2>Nos gustaría conocer tu opinión y tus valoraciones sobre aspectos de nuestro Club.
+    <br> Atención: no es obligatorio rellenar todo, solo lo que necesites comunicarnos.</h2>
+
+  <form action="results.html" method="post">
+        <label for="date">Valora la excursión del día:</label>
+        <input type="date" id="date" name="date">
+    <br>
+    <br>
+    <p>¿Cómo fue la experiencia ese día? Valora del 1 al 5, donde 5 es superbien.</p>
+        <label for="radio">1</label>
+        <input type="radio" id="radio" name="radio">
+        <label for="radio">2</label>
+        <input type="radio" id="radio" name="radio">
+        <label for="radio">3</label>
+        <input type="radio" id="radio" name="radio">
+        <label for="radio">4</label>
+        <input type="radio" id="radio" name="radio">
+        <label for="radio">5</label>
+        <input type="radio" id="radio" name="radio">
+    <br>
+    <br>
+        <label for="text">Escribe tu opinion sobre la excursión o sobre lo que quieras contarnos:</label>
+        <input type="text" id="text" name="text" maxlength="200" placeholder="200 caracteres máximo">
+    <br>
+    <br>
+    <p>Acepta lo que corresponda a tu perfil</p>
+        <label for="checkbox">Soy socio del Club</label>
+        <input type="checkbox" id="checkbox" name="checkbox">
+        <label for="checkbox">No soy socio del Club</label>
+        <input type="checkbox" id="checkbox" name="checkbox">
+        <label for="checkbox">Estoy federado con el club</label>
+        <input type="checkbox" id="checkbox" name="checkbox">
+    <br>
+    <br>
+        <button type="submit">Envia tu opinion</button>
+
+</body>
+
+</html>

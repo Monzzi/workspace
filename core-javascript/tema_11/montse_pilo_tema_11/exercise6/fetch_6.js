@@ -1,7 +1,9 @@
 function fetchPost() {
   return fetch('https://jsonplaceholder.typicode.com/posts/1')
     .then(response => {
-      console.log('Status:', response.status);
+           if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
       return response.json();
     })
     .then(data => {
@@ -9,8 +11,8 @@ function fetchPost() {
       document.getElementById('content').textContent = data.body;
     })
     .catch(error => {
-      console.error('Error:', error);
-      document.getElementById('article').innerHTML = 'Error al cargar el artículo';
+          document.getElementById('article').innerHTML = 'Error al cargar el artículo';
+
     });
 }
 
@@ -22,3 +24,4 @@ if (typeof jest === 'undefined') {
 module.exports = {
   fetchPost,
 };
+

@@ -1,0 +1,27 @@
+
+#bienvenida {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  width: 100%;
+  height: 25vh;
+  background-image: url('src/imagen_azparren_otono.jpg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+a[href="https://smalaitz.es/ATERALDIAK2024.html"] {
+  border: 3px solid rgb(229, 234, 230);
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 10px 200px;
+  background-color: rgb(41, 94, 51);
+  color: rgb(229, 234, 230);
+  border-style: ridge;
+  border-width: 5px;
+  border-color:rgb(20, 112, 37)
+}
+
+a[href*=".org"]:hover {
+  color: tomato;
+}

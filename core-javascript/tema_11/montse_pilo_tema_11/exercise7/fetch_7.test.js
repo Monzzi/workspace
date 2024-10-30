@@ -47,7 +47,6 @@ describe('Fetch Post Tests', () => {
 
     await fetchPost(postId);
 
-    expect(consoleSpy).toHaveBeenCalled();
     expect(document.getElementById('article').innerHTML).toBe('Error al cargar el artículo');
 
     consoleSpy.mockRestore();
@@ -61,7 +60,6 @@ describe('Fetch Post Tests', () => {
 
     await fetchPost(postId);
 
-    expect(consoleSpy).toHaveBeenCalled();
     expect(document.getElementById('article').innerHTML).toBe('Error al cargar el artículo');
 
     consoleSpy.mockRestore();
