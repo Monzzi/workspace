@@ -1,0 +1,200 @@
+/*elimina estilos del navegador*/
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url('../img/fondo_monte_invierno.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Gabarito", serif;
+  font-optical-sizing: auto;
+  font-weight: auto;
+  font-style: normal;
+}
+
+
+
+header {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;      /* Dirección del eje principal */
+  justify-content: space-between;  /* Centra los ítems en el eje principal (horizontal) */
+  align-items: center;      /* Centra los ítems en el eje cruzado (vertical) */
+  background-color: white;
+  padding: 10px;
+}
+
+.logo {
+  position: absolute;
+  max-height: auto;  /* Ajusta el tamaño del logo según necesites */
+  max-width: 50%;
+  justify-content: space-between;
+  margin-right: 20px;  /* Espacio entre el logo y el menú */
+}
+
+nav {
+  background-color: white;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  position: relative;
+  padding: 5px 10px;
+  border-radius: 5px;
+
+  /* Transición para efectos de fondo y color */
+  transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      box-shadow 0.3s ease;
+}
+
+/* Nuevo efecto hover con sombra y cambio de fondo suave */
+nav ul li a:hover {
+  background-color:  rgb(190, 232, 198);  /* Fondo muy sutil */
+  color:  rgb(20, 112, 37);  /* Cambio de color */
+  box-shadow: 0 4px 6px  rgb(20, 112, 37);  /* Sombra sutil */
+}
+
+/* Efecto de desplazamiento lateral con pseudo-elemento */
+nav ul li a::before {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color:  rgb(20, 112, 37);
+  transition:
+      width 0.3s ease,
+      left 0.3s ease;
+}
+
+nav ul li a:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+.contenedor-grid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.grid-contenidos {
+  display: grid;
+  grid-template-areas:
+    "texto info1"
+    "texto info2";
+  grid-template-columns: 2fr 2fr;
+  grid-gap: 20px;
+  width: 130vh;
+  height: 70vh;
+}
+
+.texto {
+  grid-area: texto;
+}
+
+.info1 {
+  grid-area: info1;
+}
+
+.info2 {
+  grid-area: info2;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.info2 img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+}
+
+.info2 iframe {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%  ;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(13, 68, 13, 0.2);
+}
+
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  width: 50%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  justify-content: center;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #a6f5b6;
+}
+
+footer {
+  position: bottom;
+  width: 100%;
+  background-color: rgb(20, 112, 37);
+  color: rgb(222, 229, 223);
+  font-size: 25px;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+  bottom: 0;
+    }
+    #pie_pagina::before {
+      content: " ★ ⛰️";
+    }
+    #pie_pagina::after {
+      content: "⛰️ ★ ";
+    }

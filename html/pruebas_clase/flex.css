@@ -1,0 +1,7 @@
+.contenedor {
+  display: flex;
+  flex-direction: row;
+  align-content: center;    /* Dirección del eje principal. */
+  justify-content: center;  /* Alinea los ítems en el eje principal.*/
+  align-items: center;      /* Alinea los ítems en el eje cruzado*/
+}

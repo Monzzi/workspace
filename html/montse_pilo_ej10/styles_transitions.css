@@ -9,47 +9,81 @@ margin: 0;
 line-height: 0;
 }
 
-#primera {
+#original:hover {
+  transition-delay: 0s;
+  transition: 2s;
+  transition-timing-function: ease-in-out;
+  transform: scale(2);
+}
+
+#primera:hover {
   filter: blur(5px);
+  transition-timing-function: linear;
+  transition: width 2s, height 2s;
 }
 
-#segunda {
+#segunda:hover {
   filter: grayscale(100%);
+  transition-behavior: ease-in;
+  transform: scaleX(2);
 }
 
-#tercera {
+#tercera:hover {
   filter: sepia(150%);
+  transition-behavior: ease-out;
+  transform: scaleY(2);
 }
 
-#cuarta {
+#cuarta:hover {
   filter: hue-rotate(90deg);
+  transition-duration: 3s;
+  transform: skew(10deg, 10deg);
 }
 
-#quinta {
+#quinta:hover {
   filter: invert(100%);
+  transition-timing-function: ease;
 }
 
-#sexta {
+#sexta:hover {
   filter: opacity(40%);
+  transition: 2s;
+  transform: width 300px;
 }
 
-#septima {
+#septima:hover {
   filter: saturate(300%);
+  transition-property: all;
+  transform: translate(40px, 40px, 100px);
 }
 
-#octava {
+#octava:hover {
   filter: contrast(400%);
+  width: 120px;
+  background-color: #e74c3c;
+  transition: 2s;
+  transform: rotate(180deg)
 }
 
-#novena {
+#novena:hover {
   filter: brightness(300%);
+  transition: 2s;
+  transform: matrix(2, 3, 1, 10, 0, 0);
+  transition-timing-function: linear;
 }
 
-#decima {
+#decima:hover {
   filter: drop-shadow(5px 5px 5px #f357ce);
+  transition: 2s;
+  transform:rotate(90deg);
+
 }
 
-#decimoprimera {
-  filter: brightness(120%) contrast(110%) blur(2px);;
+#decimoprimera:hover {
+  filter: drop-shadow(45px 45px 45px #22b80b);
+  transform: rotate(180deg);
+  transition-duration: 5s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
 }
 

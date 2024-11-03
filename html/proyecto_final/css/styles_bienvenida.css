@@ -1,0 +1,196 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-image: url('../img/fondo_monte_invierno.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Gabarito", serif;
+  padding-bottom: 60px;
+}
+
+/* Header Styles */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 0.5rem 1rem;
+}
+
+.logo-header img {
+  height: 4rem;
+  width: auto;
+  display: block;
+}
+
+/* Navigation Styles */
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 3rem;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease,
+              color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  background-color: rgb(190, 232, 198);
+  color: rgb(20, 112, 37);
+  box-shadow: inset 0 0 0 1px rgb(20, 112, 37);
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: rgb(20, 112, 37);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Grid Layout */
+.contenedor-grid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.grid-bienvenida {
+  display: grid;
+  grid-template-areas:
+    "bienvenida animado"
+    "bienvenida foto";
+  grid-template-columns: 2fr 2fr;
+  grid-gap: 10px;
+  width: 150vh;
+  height: 60vh;
+  margin-bottom: 20px;
+}
+
+.mensaje-bienvenida {
+  grid-area: bienvenida;
+  background-color: rgba(203, 219, 206, 0.5);
+  padding: 10px 10px 0;
+  border-radius: 10px;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+/* Animated Logo */
+.logo-animado {
+  grid-area: animado;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo {
+  animation: mi-animacion 5s ease-in-out 1 alternate;
+}
+
+@keyframes mi-animacion {
+  from {
+    margin-left: 50%;
+    width: 30%;
+  }
+  to {
+    margin-left: 0%;
+    width: 30%;
+  }
+}
+
+/* Profile Photo */
+.foto-saioa {
+  grid-area: foto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.foto-saioa img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Footer Styles */
+footer {
+  position: fixed;
+  width: 100%;
+  background-color: rgb(20, 112, 37);
+  color: rgb(222, 229, 223);
+  text-align: center;
+  padding: 10px;
+  bottom: 0;
+}
+
+#pie_pagina::before {
+  content: " ★ ⛰️";
+}
+
+#pie_pagina::after {
+  content: "⛰️ ★ ";
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .logo-header {
+    margin-bottom: 0.5rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}

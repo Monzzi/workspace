@@ -1,0 +1,235 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url('../img/fondo_monte_invierno.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Gabarito", serif;
+  font-optical-sizing: auto;
+  font-weight: auto;
+  font-style: normal;
+}
+
+header {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;      /* Dirección del eje principal */
+  justify-content: center;  /* Centra los ítems en el eje principal (horizontal) */
+  align-items: center;      /* Centra los ítems en el eje cruzado (vertical) */
+  background-color: white;
+  padding: 10px;
+}
+
+nav {
+  background-color: white;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  position: relative;
+  padding: 5px 10px;
+  border-radius: 5px;
+
+  /* Transición para efectos de fondo y color */
+  transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      box-shadow 0.3s ease;
+}
+
+/* Nuevo efecto hover con sombra y cambio de fondo suave */
+nav ul li a:hover {
+  background-color:  rgb(190, 232, 198);  /* Fondo muy sutil */
+  color:  rgb(20, 112, 37);  /* Cambio de color */
+  box-shadow: 0 6px 10px  rgb(20, 112, 37);  /* Sombra sutil */
+}
+
+/* Efecto de desplazamiento lateral con pseudo-elemento */
+nav ul li a::before {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color:  rgb(20, 112, 37);
+  transition:
+      width 0.3s ease,
+      left 0.3s ease;
+}
+
+nav ul li a:hover::before {
+  width: 100%;
+  left: 0;
+}
+/* dar estilo a la tabla */
+.miniatura {
+    width: 30px;
+    height: 33px;
+}
+
+.tabla-moderna {
+  width: 90%;      /* Ajusta el porcentaje como prefieras */
+  padding: 0 20px; /* Añade espacio interno a los lados */
+  margin: 25px auto;
+  box-sizing: border-box;/* Centrada horizontalmente */
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.85em; /* Reducido el tamaño de fuente */
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 8px; /* Reducido el radio de borde */
+  overflow: hidden;
+  background: linear-gradient(45deg, #ffffff, #f8f9fa);
+  animation: tableFadeIn 0.5s ease-out;
+}
+
+@keyframes tableFadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.tabla-moderna thead tr {
+  background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+  color: #ffffff;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tabla-moderna th,
+.tabla-moderna td {
+  border: 1px solid #e2e8f0;
+  padding: 10px 15px; /* Reducido el padding */
+}
+
+.tabla-moderna th {
+  font-weight: 600;
+  border-bottom: 2px solid #FF6B6B;
+  font-size: 0.9em; /* Reducido el tamaño de fuente del encabezado */
+}
+
+.tabla-moderna thead th {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.tabla-moderna tbody tr {
+  transition: all 0.3s ease;
+}
+
+.tabla-moderna tbody tr:nth-of-type(even) {
+  background-color: rgba(78, 205, 196, 0.1);
+}
+
+.tabla-moderna tbody tr:last-of-type td {
+  border-bottom-width: 2px;
+  border-bottom-color: #FF6B6B;
+}
+
+.tabla-moderna tbody tr:hover {
+  background: linear-gradient(45deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
+  transform: scale(1.01);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.tabla-moderna th:first-child,
+.tabla-moderna td:first-child {
+  border-left: 3px solid #e2e8f0; /* Reducido el grosor del borde izquierdo */
+}
+
+.tabla-moderna tbody tr:hover td:first-child {
+  border-left: 3px solid #FF6B6B;
+}
+
+.tabla-moderna td {
+  position: relative;
+  overflow: hidden;
+}
+
+.tabla-moderna td:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.2);
+  animation: cellGlow 0.5s ease-out;
+}
+
+/* Bordes redondeados en las esquinas externas */
+.tabla-moderna thead th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.tabla-moderna thead th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.tabla-moderna tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+.tabla-moderna tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
+}
+
+@keyframes cellGlow {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+
+footer {
+  position: bottom;
+  width: 100%;
+  background-color: rgb(20, 112, 37);
+  color: rgb(222, 229, 223);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: italic;
+  font-size: 25px;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+  bottom: 0;
+    }
+    #pie_pagina::before {
+      content: " ★ ⛰️";
+    }
+    #pie_pagina::after {
+      content: "⛰️ ★ ";
+    }
