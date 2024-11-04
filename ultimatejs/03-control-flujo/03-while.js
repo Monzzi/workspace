@@ -1,4 +1,4 @@
-/* loops, tipos de bucles
+  /* loops, tipos de bucles
 while
 do while
 for

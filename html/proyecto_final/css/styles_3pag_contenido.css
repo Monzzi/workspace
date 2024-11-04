@@ -9,40 +9,32 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-image: url('../img/fondo_monte_invierno.jpeg');
+  background-image: url('../img/imagen_azparren_otono.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: "Gabarito", serif;
-  font-optical-sizing: auto;
-  font-weight: auto;
-  font-style: normal;
 }
 
 
 
 header {
-  height: 15%;
+  position: fixed;
+  height: 8%;
   width: 100%;
   display: flex;
   flex-direction: row;      /* Dirección del eje principal */
-  justify-content: space-between;  /* Centra los ítems en el eje principal (horizontal) */
+  justify-content: right;  /* Centra los ítems en el eje principal (horizontal) */
   align-items: center;      /* Centra los ítems en el eje cruzado (vertical) */
   background-color: white;
-  padding: 10px;
-}
-
-.logo {
-  position: absolute;
-  max-height: auto;  /* Ajusta el tamaño del logo según necesites */
-  max-width: 50%;
-  justify-content: space-between;
-  margin-right: 20px;  /* Espacio entre el logo y el menú */
+  padding: 5px;
 }
 
 nav {
+  display:flex
   background-color: white;
+  justify-content: center;
   padding: 10px;
 }
 
@@ -65,19 +57,16 @@ nav ul li a {
   position: relative;
   padding: 5px 10px;
   border-radius: 5px;
-
-  /* Transición para efectos de fondo y color */
-  transition:
-      background-color 0.3s ease,
-      color 0.3s ease,
-      box-shadow 0.3s ease;
+  transition: background-color 0.3s ease,
+              color 0.3s ease,
+              box-shadow 0.3s ease;
 }
 
 /* Nuevo efecto hover con sombra y cambio de fondo suave */
 nav ul li a:hover {
-  background-color:  rgb(190, 232, 198);  /* Fondo muy sutil */
-  color:  rgb(20, 112, 37);  /* Cambio de color */
-  box-shadow: 0 4px 6px  rgb(20, 112, 37);  /* Sombra sutil */
+  background-color: #F6EEC9;  /* Fondo muy sutil */
+  color:  #EF4E4E;  /* Cambio de color */
+  box-shadow: 0 6px 10px #EF4E4E;  /* Sombra sutil */
 }
 
 /* Efecto de desplazamiento lateral con pseudo-elemento */
@@ -88,7 +77,7 @@ nav ul li a::before {
   left: 50%;
   width: 0;
   height: 2px;
-  background-color:  rgb(20, 112, 37);
+  background-color:  #EF4E4E;
   transition:
       width 0.3s ease,
       left 0.3s ease;
@@ -100,10 +89,12 @@ nav ul li a:hover::before {
 }
 
 .contenedor-grid {
-  display: grid;
+  display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 20px;
+  align-content: space-around;
+  align-items: stretch;
+  padding: 20px 20px 20px; /* Espaciado adicional para el header y el footer */
+ /* Permite que el grid ocupe espacio vertical */
 }
 
 .grid-contenidos {
@@ -111,31 +102,48 @@ nav ul li a:hover::before {
   grid-template-areas:
     "texto info1"
     "texto info2";
-  grid-template-columns: 2fr 2fr;
-  grid-gap: 20px;
-  width: 130vh;
-  height: 70vh;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 4%;
+    padding: 10px;
+    max-width: 1200px;
+    max-height: 100vh;
+    width: 100%;
+    height: auto;
+    background-color: #F6EEC9;
+    opacity: 0.9  ;
+    border-radius: 15px;
 }
 
 .texto {
   grid-area: texto;
+  background-color: #A1DD70;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .info1 {
   grid-area: info1;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  display: table-column;
+
 }
 
 .info2 {
   grid-area: info2;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .info2 img {
-  max-width: 100%;
-  max-height: 100%;
-  margin: auto;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .info2 iframe {
@@ -143,8 +151,6 @@ nav ul li a:hover::before {
   height: 100%;
   margin: auto;
 }
-
-
 
 form {
   display: flex;
@@ -157,8 +163,8 @@ form {
   border-radius: 8px;
   padding: 20px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 4px 8px rgba(13, 68, 13, 0.2);
+  background: #F6EEC9;
+  box-shadow: 0 4px 8px rgba(13, 68, 13);
 }
 
 
@@ -169,7 +175,7 @@ form {
   padding: 10px;
   border: none;
   border-radius: 4px;
-  background-color: #4CAF50;
+  background-color: #799351;
   color: white;
   font-size: 16px;
   cursor: pointer;
@@ -182,19 +188,44 @@ form {
 }
 
 footer {
-  position: bottom;
+  position: fixed;
+  bottom: 0;
   width: 100%;
-  background-color: rgb(20, 112, 37);
+  background-color: #EF4E4E;
   color: rgb(222, 229, 223);
-  font-size: 25px;
   text-align: center;
   padding: 10px;
-  margin-top: 20px;
-  bottom: 0;
-    }
-    #pie_pagina::before {
-      content: " ★ ⛰️";
-    }
-    #pie_pagina::after {
-      content: "⛰️ ★ ";
-    }
+}
+
+#pie_pagina::before {
+  content: " ★ ⛰️";
+}
+
+#pie_pagina::after {
+  content: "⛰️ ★ ";
+}
+/* Responsividad para el grid */
+@media (max-width: 768px) {
+  .grid-contenidos {
+    grid-template-columns: 1fr; /* Cambia a una columna */
+    grid-template-areas:
+      "texto"
+      "info1"
+      "info2"; /* Mantiene orden */
+    padding: 10px;
+  }
+
+  /* Ajuste de áreas individuales dentro del grid */
+  .texto, .info1, .info2 {
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* Asegura que las imágenes se ajusten al contenedor */
+  .info2 img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+}
+}

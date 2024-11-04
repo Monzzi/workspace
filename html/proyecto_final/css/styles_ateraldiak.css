@@ -8,30 +8,30 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-image: url('../img/fondo_monte_invierno.jpeg');
+  background-image: url('../img/imagen_azparren_otono.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: "Gabarito", serif;
-  font-optical-sizing: auto;
-  font-weight: auto;
-  font-style: normal;
 }
 
 header {
-  height: 15%;
+  position: fixed;
+  height: 8%;
   width: 100%;
   display: flex;
   flex-direction: row;      /* Dirección del eje principal */
-  justify-content: center;  /* Centra los ítems en el eje principal (horizontal) */
+  justify-content: right;  /* Centra los ítems en el eje principal (horizontal) */
   align-items: center;      /* Centra los ítems en el eje cruzado (vertical) */
   background-color: white;
-  padding: 10px;
+  padding: 5px;
 }
 
 nav {
+  display:flex
   background-color: white;
+  justify-content: center;
   padding: 10px;
 }
 
@@ -54,8 +54,6 @@ nav ul li a {
   position: relative;
   padding: 5px 10px;
   border-radius: 5px;
-
-  /* Transición para efectos de fondo y color */
   transition:
       background-color 0.3s ease,
       color 0.3s ease,
@@ -64,9 +62,9 @@ nav ul li a {
 
 /* Nuevo efecto hover con sombra y cambio de fondo suave */
 nav ul li a:hover {
-  background-color:  rgb(190, 232, 198);  /* Fondo muy sutil */
-  color:  rgb(20, 112, 37);  /* Cambio de color */
-  box-shadow: 0 6px 10px  rgb(20, 112, 37);  /* Sombra sutil */
+  background-color: #F6EEC9;  /* Fondo muy sutil */
+  color:  #EF4E4E;  /* Cambio de color */
+  box-shadow: 0 6px 10px #EF4E4E;  /* Sombra sutil */  /* Sombra sutil */
 }
 
 /* Efecto de desplazamiento lateral con pseudo-elemento */
@@ -77,7 +75,7 @@ nav ul li a::before {
   left: 50%;
   width: 0;
   height: 2px;
-  background-color:  rgb(20, 112, 37);
+  background-color:  #EF4E4E;
   transition:
       width 0.3s ease,
       left 0.3s ease;
@@ -87,6 +85,8 @@ nav ul li a:hover::before {
   width: 100%;
   left: 0;
 }
+
+
 /* dar estilo a la tabla */
 .miniatura {
     width: 30px;
@@ -94,17 +94,17 @@ nav ul li a:hover::before {
 }
 
 .tabla-moderna {
-  width: 90%;      /* Ajusta el porcentaje como prefieras */
-  padding: 0 20px; /* Añade espacio interno a los lados */
-  margin: 25px auto;
+  width: 90%;
+  padding: 10px 10px;   /* Ajusta el porcentaje como prefieras */
+  margin-top: 100px;/* Añade espacio interno a los lados */
+  margin: 80px auto;
   box-sizing: border-box;/* Centrada horizontalmente */
   border-collapse: separate;
   border-spacing: 0;
-  font-size: 0.85em; /* Reducido el tamaño de fuente */
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
   border-radius: 8px; /* Reducido el radio de borde */
   overflow: hidden;
-  background: linear-gradient(45deg, #ffffff, #f8f9fa);
+  background: linear-gradient(45deg, #F6EEC9, #A1DD70);
   animation: tableFadeIn 0.5s ease-out;
 }
 
@@ -120,7 +120,7 @@ nav ul li a:hover::before {
 }
 
 .tabla-moderna thead tr {
-  background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+  background: linear-gradient(45deg, #EF4E4E, #799351);
   color: #ffffff;
   text-align: left;
   text-transform: uppercase;
@@ -129,14 +129,14 @@ nav ul li a:hover::before {
 
 .tabla-moderna th,
 .tabla-moderna td {
-  border: 1px solid #e2e8f0;
+  border: 1px solid #F6EEC9;
   padding: 10px 15px; /* Reducido el padding */
 }
 
 .tabla-moderna th {
   font-weight: 600;
-  border-bottom: 2px solid #FF6B6B;
-  font-size: 0.9em; /* Reducido el tamaño de fuente del encabezado */
+  border-top: 4px solid #EF4E4E;
+  border-bottom: 4px solid #EF4E4E;
 }
 
 .tabla-moderna thead th {
@@ -148,12 +148,12 @@ nav ul li a:hover::before {
 }
 
 .tabla-moderna tbody tr:nth-of-type(even) {
-  background-color: rgba(78, 205, 196, 0.1);
+  background-color: #F6EEC9;
 }
 
 .tabla-moderna tbody tr:last-of-type td {
-  border-bottom-width: 2px;
-  border-bottom-color: #FF6B6B;
+  border-bottom-width: 4px;
+  border-bottom-color: #EF4E4E;
 }
 
 .tabla-moderna tbody tr:hover {
@@ -164,21 +164,21 @@ nav ul li a:hover::before {
 
 .tabla-moderna th:first-child,
 .tabla-moderna td:first-child {
-  border-left: 3px solid #e2e8f0; /* Reducido el grosor del borde izquierdo */
+  border-left: 3px solid #F6EEC9; /* Reducido el grosor del borde izquierdo */
 }
 
 .tabla-moderna tbody tr:hover td:first-child {
-  border-left: 3px solid #FF6B6B;
+  border-left: 3px solid #EF4E4E;
 }
 
 .tabla-moderna td {
-  position: relative;
+  position: static;
   overflow: hidden;
 }
 
 .tabla-moderna td:hover::after {
   content: '';
-  position: absolute;
+  position: static;
   left: 0;
   right: 0;
   top: 0;
@@ -214,22 +214,35 @@ nav ul li a:hover::before {
 }
 
 
+/* Footer Styles */
 footer {
-  position: bottom;
+  position: fixed;
+  bottom: 0;
   width: 100%;
-  background-color: rgb(20, 112, 37);
+  background-color: #EF4E4E;
   color: rgb(222, 229, 223);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-style: italic;
-  font-size: 25px;
   text-align: center;
   padding: 10px;
-  margin-top: 20px;
-  bottom: 0;
-    }
-    #pie_pagina::before {
-      content: " ★ ⛰️";
-    }
-    #pie_pagina::after {
-      content: "⛰️ ★ ";
-    }
+}
+
+#pie_pagina::before {
+  content: " ★ ⛰️";
+}
+
+#pie_pagina::after {
+  content: "⛰️ ★ ";
+}
+
+@media (max-width: 768px) {
+  .tabla-moderna {
+    width: 100%; /* Ocupa todo el ancho en móviles */
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  .tabla-moderna th, .tabla-moderna td {
+    padding: 8px; /* Reduce el padding en pantallas pequeñas */
+    font-size: 0.9rem; /* Disminuye el tamaño de fuente */
+  }
+}
+
