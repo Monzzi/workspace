@@ -1,0 +1,48 @@
+// 1. Script cambio del título de la página https://navarra.es
+		document.title = 'Nueva WEB Gobierno Navarra';
+
+
+// 2. Scripts cambio de estilos e imágenes de la página https://navarra.es
+
+	// cambio texto a violeta de las etiquetas <p>
+		const etiquetaParrafos = document.getElementsByTagName('p');
+		for (let i = 0; i < etiquetaParrafos.length; i++) {
+		  etiquetaParrafos[i].style.color = '#5c1b6c';
+		}
+
+	// cambio color fondo del body a verde claro
+		document.body.style.backgroundColor = '#a3e493';
+
+	// cambio color "banner" rojo a amarillo.
+		document.querySelector('.contenedor-band').style.backgroundColor = '#eded14';
+
+	// cambiar la primera imagen con la class:'img-responsive'  por otra.
+		const imagen = document.getElementsByClassName('img-responsive')[0];
+		if (imagen) {
+		imagen.src = 'https://web.gencat.cat/web/.content/Imatge/historia/palau.jpg_1878336148.jpg';
+	  	imagen.alt = 'Generalitat de Catalunya';
+		}
+
+	// Rotar el matiz de los colores de todas las imágenes
+		document.querySelectorAll('img').forEach((img) => {
+		  img.style.filter = 'hue-rotate(240deg)';
+		});
+
+
+// 3. Añadir un elemento HTML al árbol DOM a https://navarra.es
+
+	// Creamos nuevo elemento
+		const nuevaEtiqueta = document.createElement('p');
+		const miTexto = document.createTextNode('Aquí está este nuevo elemento. El primero insertado en el DOM por Monzzi');
+
+	// Localizamos e identificamos el nodo padre
+		const element = document.getElementsByClassName('subtitle')[0];
+
+	// Añadimos nuevo elemento como hijo
+		nuevaEtiqueta.appendChild(miTexto);
+		element.appendChild(nuevaEtiqueta);
+
+	// cambio un poco el estilo del elemento para que destaque
+		nuevaEtiqueta.style.fontWeight = 'bold'; 
+		nuevaEtiqueta.style.textAlign = 'center'; 
+		nuevaEtiqueta.style.color = 'blue'; 

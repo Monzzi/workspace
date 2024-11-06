@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>QGIS Track Profile 2 Web</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <style>
+    html,
+    body,
+    #map,
+    #elevation-div {
+      height: 100%;
+      width: 100%;
+      padding: 0px;
+      margin: 0px;
+      position: relative;
+      z-index: 9999;
+    }
+
+    #elevation-div { overflow: visible; }
+    #map {
+      height: 75%;
+      position: relative;
+      z-index: 1;
+    }
+
+    #elevation-div {
+      height: 25%;
+      font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+    }
+
+    .data-summary {
+      font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      position: absolute;
+      bottom: 0;
+      left: 45px;
+    }
+
+    .data-summary .summaryvalue {
+      font-weight: bold;
+    }
+
+  </style>
+  <style>
+   .custom-theme.leaflet-control.elevation .area {
+    fill: #d45f5f;
+    stroke: hsla(60, 0%, 0%, 0.85);
+    stroke-width: 2.5;
+   }
+
+   .custom-theme.height-focus.circle-lower {
+     fill: #ffb800;
+   }
+
+   .custom-theme.elevation-polyline {
+     stroke: #ff0000;
+     stroke-opacity: 0.85 ;
+   }
+ </style>
+
+  <!-- Leaflet (JS/CSS) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.2/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.3.2/dist/leaflet.js"></script>
+  <!-- D3.js -->
+  <script src="https://unpkg.com/d3@4.13.0/build/d3.min.js" charset="utf-8"></script>
+  <!-- leaflet-gpx -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.4.0/gpx.js"></script>
+  <!-- leaflet-elevation -->
+  <link rel="stylesheet" href="https://unpkg.com/@raruto/leaflet-elevation@0.3.9/leaflet-elevation.min.css" />
+  <script src="https://unpkg.com/@raruto/leaflet-elevation@0.3.9/leaflet-elevation.min.js"></script>
+
+</head>
+
+<body>
+
+  <div id="map"></div>
+  <div id="elevation-div" class="leaflet-control elevation"></div>
+
+  <div id="data-summary" class="data-summary"><span class="totlen"><span class="summarylabel">Total Length: </span><span class="summaryvalue">0</span></span> &mdash; <span class="maxele"><span class="summarylabel">Max Elevation: </span><span class="summaryvalue">0</span></span>
+    &mdash; <span class="minele"><span class="summarylabel">Min Elevation: </span><span class="summaryvalue">0</span></span></div>
+
+  <script>
+  var opts = {"map": {"center": [41.4583, 12.7059], "zoom": 5, "markerZoomAnimation": false, "zoomControl": false}, "zoomControl": {"position": "topleft"}, "elevationControl": {"data": "{\"name\":\"pena-la-liebre-pena-terreros-castillete-y-cuevas-de-pancorbo tracks\", \"type\":\"FeatureCollection\",\"features\": [{ \"type\": \"Feature\", \"properties\": { }, \"geometry\": { \"type\": \"MultiLineString\", \"coordinates\": [ [ [ -3.108283, 42.639006,652.5 ], [ -3.108632, 42.638774,646.6 ], [ -3.109988, 42.638365,641.5 ], [ -3.11017, 42.637718,636.8 ], [ -3.110872, 42.637064,640.6 ], [ -3.111029, 42.637101,642.7 ], [ -3.111103, 42.636825,641.5 ], [ -3.111442, 42.636481,641.0 ], [ -3.111603, 42.635934,645.6 ], [ -3.111435, 42.63526,643.6 ], [ -3.111825, 42.635293,654.4 ], [ -3.111976, 42.635024,661.1 ], [ -3.112419, 42.635016,669.7 ], [ -3.113026, 42.635223,680.6 ], [ -3.113135, 42.635041,682.2 ], [ -3.114464, 42.634518,694.4 ], [ -3.115609, 42.634385,706.8 ], [ -3.117284, 42.634881,742.0 ], [ -3.118567, 42.635082,761.2 ], [ -3.11941, 42.635891,787.2 ], [ -3.120625, 42.636451,803.5 ], [ -3.121315, 42.637099,814.1 ], [ -3.121937, 42.637225,820.4 ], [ -3.124257, 42.638238,847.9 ], [ -3.125694, 42.638423,833.1 ], [ -3.126737, 42.638721,822.4 ], [ -3.128995, 42.640142,812.3 ], [ -3.129713, 42.641246,805.4 ], [ -3.131404, 42.642318,779.5 ], [ -3.131503, 42.642606,774.7 ], [ -3.130809, 42.642812,780.0 ], [ -3.130584, 42.643181,782.9 ], [ -3.131036, 42.643537,790.5 ], [ -3.131416, 42.64421,816.6 ], [ -3.132295, 42.645089,816.2 ], [ -3.132294, 42.645636,825.5 ], [ -3.132499, 42.646287,831.2 ], [ -3.13315, 42.64686,823.1 ], [ -3.133282, 42.647125,817.0 ], [ -3.133219, 42.647338,820.3 ], [ -3.133608, 42.647466,816.1 ], [ -3.134445, 42.648151,836.2 ], [ -3.135196, 42.649156,859.0 ], [ -3.135226, 42.649546,872.4 ], [ -3.135729, 42.650245,874.9 ], [ -3.13601, 42.651101,886.7 ], [ -3.135581, 42.651574,886.3 ], [ -3.135747, 42.652176,882.3 ], [ -3.135397, 42.652996,880.6 ], [ -3.135918, 42.652983,882.2 ], [ -3.137191, 42.654001,911.8 ], [ -3.137524, 42.65557,906.2 ], [ -3.137407, 42.656267,904.1 ], [ -3.136031, 42.657139,907.3 ], [ -3.134932, 42.658321,919.9 ], [ -3.134971, 42.659416,920.0 ], [ -3.135273, 42.659672,919.6 ], [ -3.135183, 42.660419,920.1 ], [ -3.135464, 42.660872,931.1 ], [ -3.135303, 42.661323,941.9 ], [ -3.135433, 42.661734,954.9 ], [ -3.134813, 42.662315,968.2 ], [ -3.134226, 42.662718,982.9 ], [ -3.134135, 42.662662,979.0 ], [ -3.133381, 42.663443,993.1 ], [ -3.132733, 42.663828,1005.8 ], [ -3.130655, 42.663599,1050.1 ], [ -3.130243, 42.66374,1060.0 ], [ -3.129639, 42.663644,1060.0 ], [ -3.129429, 42.663264,1060.0 ], [ -3.129513, 42.663213,1060.0 ], [ -3.129278, 42.663408,1060.0 ], [ -3.12895, 42.663005,1060.0 ], [ -3.129115, 42.662538,1053.4 ], [ -3.128243, 42.661372,1003.5 ], [ -3.126593, 42.661265,995.4 ], [ -3.126052, 42.66107,991.9 ], [ -3.12509, 42.661206,983.9 ], [ -3.124731, 42.6611,985.3 ], [ -3.12438, 42.66012,979.7 ], [ -3.122492, 42.657398,974.9 ], [ -3.122016, 42.656951,977.0 ], [ -3.121319, 42.655624,970.7 ], [ -3.119538, 42.654832,978.6 ], [ -3.118967, 42.654898,980.0 ], [ -3.117162, 42.654472,985.8 ], [ -3.115499, 42.653341,976.9 ], [ -3.115335, 42.653086,978.9 ], [ -3.115326, 42.652372,981.3 ], [ -3.114538, 42.651037,961.9 ], [ -3.113802, 42.650213,960.0 ], [ -3.113721, 42.649556,953.8 ], [ -3.114022, 42.649174,960.9 ], [ -3.114536, 42.649134,979.4 ], [ -3.114686, 42.648923,987.5 ], [ -3.114606, 42.648464,983.3 ], [ -3.114411, 42.648236,976.6 ], [ -3.116482, 42.648407,972.6 ], [ -3.117039, 42.648166,963.7 ], [ -3.117641, 42.648342,963.2 ], [ -3.118063, 42.647788,944.2 ], [ -3.119112, 42.647707,937.7 ], [ -3.120278, 42.647335,921.1 ], [ -3.121863, 42.647598,921.0 ], [ -3.123361, 42.647489,915.1 ], [ -3.123401, 42.647081,908.9 ], [ -3.123623, 42.646942,909.3 ], [ -3.123283, 42.64685,908.9 ], [ -3.123429, 42.645998,927.1 ], [ -3.123351, 42.645784,932.1 ], [ -3.124831, 42.645743,952.6 ], [ -3.125742, 42.645958,958.4 ], [ -3.125963, 42.645883,960.0 ], [ -3.12511, 42.644979,983.2 ], [ -3.124466, 42.644742,990.2 ], [ -3.122757, 42.643682,1019.7 ], [ -3.122676, 42.64338,1020.0 ], [ -3.122425, 42.643325,1020.0 ], [ -3.122581, 42.643014,1021.9 ], [ -3.122113, 42.642833,1032.0 ], [ -3.122242, 42.642504,1026.7 ], [ -3.121446, 42.642406,1038.7 ], [ -3.121247, 42.642519,1030.5 ], [ -3.120952, 42.641969,1032.5 ], [ -3.119142, 42.640932,1011.6 ], [ -3.118295, 42.640593,998.4 ], [ -3.116966, 42.640521,990.6 ], [ -3.116579, 42.640283,1000.4 ], [ -3.116574, 42.640112,997.3 ], [ -3.116534, 42.64024,1000.8 ], [ -3.117173, 42.640541,988.3 ], [ -3.117295, 42.640482,987.8 ], [ -3.117143, 42.640337,985.5 ], [ -3.117528, 42.64024,973.9 ], [ -3.117127, 42.64038,988.1 ], [ -3.116735, 42.640196,996.3 ], [ -3.116905, 42.640377,993.4 ], [ -3.117916, 42.640581,992.2 ], [ -3.118781, 42.640454,1005.1 ], [ -3.118936, 42.640159,994.6 ], [ -3.119422, 42.640284,1002.6 ], [ -3.120678, 42.641032,1003.9 ], [ -3.119874, 42.63952,962.4 ], [ -3.119093, 42.638944,951.2 ], [ -3.119024, 42.638684,940.8 ], [ -3.118433, 42.638449,923.4 ], [ -3.118163, 42.637568,897.8 ], [ -3.117595, 42.637231,872.4 ], [ -3.117376, 42.636731,848.1 ], [ -3.116986, 42.636588,830.2 ], [ -3.116493, 42.636768,806.7 ], [ -3.116408, 42.636582,800.1 ], [ -3.115941, 42.636356,793.4 ], [ -3.115597, 42.636353,783.7 ], [ -3.115632, 42.636201,780.1 ], [ -3.115438, 42.636133,769.1 ], [ -3.113817, 42.635972,718.9 ], [ -3.113708, 42.63583,707.5 ], [ -3.113569, 42.635904,706.2 ], [ -3.113668, 42.635988,712.8 ], [ -3.113622, 42.636541,698.8 ], [ -3.113163, 42.636644,685.7 ], [ -3.112549, 42.636377,671.6 ], [ -3.11245, 42.636482,667.5 ], [ -3.112533, 42.63686,664.2 ], [ -3.111675, 42.637067,657.9 ], [ -3.111722, 42.637323,660.1 ], [ -3.111521, 42.637712,660.2 ], [ -3.110706, 42.638377,658.0 ], [ -3.108286, 42.638997,652.2 ]]] } }]}", "options": {"position": "topright", "theme": "custom-theme", "useHeightIndicator": true, "collapsed": false, "detachedView": true, "elevationDiv": "#elevation-div", "followPositionMarker": false, "autohide": false}}, "layersControl": {"options": {"collapsed": false}}, "otmLayer": {"url": "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", "options": {"attribution": "Map data: &copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenTopoMap</a>, <a href=\"http://viewfinderpanoramas.org\">SRTM</a> | Map style: &copy; <a href=\"https://opentopomap.org\">OpenTopoMap</a> (<a href=\"https://creativecommons.org/licenses/by-sa/3.0/\">CC-BY-SA</a>)"}}} ;
+    var map = new L.Map('map', opts.map);
+
+    var baseLayers = {};
+    baseLayers.OTM = new L.TileLayer(opts.otmLayer.url, opts.otmLayer.options);
+
+    var controlZoom = new L.Control.Zoom(opts.zoomControl);
+    var controlElevation = L.control.elevation(opts.elevationControl.options);
+    var controlLayer = L.control.layers(baseLayers, null, opts.layersControl.options);
+
+    controlZoom.addTo(map);
+    controlLayer.addTo(map);
+
+    map.addLayer(baseLayers.OTM);
+
+    map.on('eledata_loaded', function(e) {
+      var q = document.querySelector.bind(document);
+      var track = e.track_info;
+
+      controlLayer.addOverlay(e.layer, e.name);
+
+      q('.totlen .summaryvalue').innerHTML = track.distance.toFixed(2) + " km";
+      q('.maxele .summaryvalue').innerHTML = track.elevation_max.toFixed(2) + " m";
+      q('.minele .summaryvalue').innerHTML = track.elevation_min.toFixed(2) + " m";
+    });
+
+    controlElevation.loadChart(map);
+    controlElevation.loadData(opts.elevationControl.data);
+  </script>
+
+</body>
+
+</html>
