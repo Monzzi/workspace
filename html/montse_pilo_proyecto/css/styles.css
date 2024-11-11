@@ -1,0 +1,94 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('../img/001-1970JUN7Saioa.jpg');
+  background-size: cover; /* Hace que la imagen cubra toda el área sin espacios en blanco */
+  background-position: center center; /* Centra la imagen tanto horizontal como verticalmente */
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fija la imagen al fondo */
+  height: 100vh; /* Cubre toda la altura de la ventana */
+  width: 100%; /* Cubre todo el ancho de la pantalla */
+  margin: 0; /* Elimina los márgenes para evitar cualquier desplazamiento */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Gabarito", serif;
+}
+
+/* Contenedor del login */
+.login-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(13, 68, 13, 0.2);
+}
+
+form input {
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
+  text-align: left;
+}
+
+.recover-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  width: 500px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(13, 68, 13, 0.2);
+}
+
+  /* Estilo para el formulario */
+
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #A1DD70;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  justify-content: center;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #EF4E4E;
+}
+
+footer {
+  background-color: #EF4E4E;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#pie_pagina::before { content: " ★ ⛰️"; }
+#pie_pagina::after { content: "⛰️ ★ "; }
+#desarrollo { color: rgb(222, 229, 223); }

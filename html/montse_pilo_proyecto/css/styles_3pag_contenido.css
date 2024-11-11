@@ -1,0 +1,204 @@
+/* Reseteo básico de estilo */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo global del cuerpo */
+body {
+  font-family: "Gabarito", sans-serif;
+  line-height: 1.6;
+  background-color: #f3f3f3;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px; /* Espacio adicional inferior */
+}
+
+/* Encabezado */
+header {
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Menú de navegación */
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #A1DD70;
+  color: #EF4E4E;
+  box-shadow: 0 6px 10px #EF4E4E;
+}
+
+/* Contenedor de la cuadrícula principal */
+.contenedor-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 10px; /* Espacio adicional superior */
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 30px; /* Añade espacio al final para que el grid se vea extendido */
+}
+
+/* Cuadrícula de contenido */
+.grid-contenidos {
+  display: grid;
+  grid-template-areas:
+    "texto info1"
+    "texto info2";
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px;
+  width: 100%;
+  background-color: #F6EEC9;
+  opacity: 0.9;
+  border-radius: 15px;
+  margin-bottom: 20px; /* Espacio extra entre el contenido y el borde del grid */
+}
+
+/* Texto en la cuadrícula */
+.texto {
+  grid-area: texto;
+  background-color: #A1DD70;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+h2 {
+  color: #EF4E4E;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+hr {
+  background-color: #EF4E4E;
+  color: #EF4E4E;
+  height: 5px;
+}
+
+/* Primera sección de información */
+.info1 {
+  grid-area: info1;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+}
+
+#instruciones {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.info1 img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Segunda sección de información */
+.info2 {
+  grid-area: info2;
+  display: flex;
+  text-align: left;
+  align-items: left;
+}
+
+.info2 img, .info2 iframe {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Formulario en el grid */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 100%;
+  padding: 20px;
+  text-align: left;
+  background-color: #F6EEC9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(13, 68, 13, 0.3);
+}
+
+/* Botón del formulario */
+.button {
+  display: inline-block;
+  width: 50%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #799351;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #a6f5b6;
+}
+
+footer {
+  background-color: #EF4E4E;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#pie_pagina::before { content: " ★ ⛰️"; }
+#pie_pagina::after { content: "⛰️ ★ "; }
+#desarrollo { color: rgb(222, 229, 223); }
+
+/* Diseño Responsive */
+@media (max-width: 768px) {
+  /* Cambia la cuadrícula a una columna en pantallas pequeñas */
+  .grid-contenidos {
+    grid-template-areas:
+      "texto"
+      "info1"
+      "info2";
+    grid-template-columns: 1fr;
+  }
+
+  /* Ajusta la navegación para pantallas pequeñas */
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .button {
+    width: 100%; /* Botón ocupa el ancho completo */
+  }
+}

@@ -1,0 +1,212 @@
+/* Reset y estilos generales */
+* {
+  margin: 0px; /* Elimina los márgenes de todos los elementos */
+  padding: 0px; /* Elimina el relleno de todos los elementos */
+  box-sizing: border-box; /* Incluye bordes y padding en el cálculo de ancho y alto */
+}
+
+body {
+  font-family: "Gabarito", sans-serif; /* Fuente principal */
+  line-height: 1.6; /* Altura de línea para mejor legibilidad */
+  background-color: #f3f3f3; /* Color de fondo general */
+  min-height: 100vh; /* Asegura que el body ocupe al menos toda la ventana */
+  display: flex;
+  flex-direction: column; /* Organiza el contenido en columna */
+}
+
+/* Estilos para el encabezado */
+header {
+  background-color: white; /* Fondo blanco en el header */
+  padding: 1rem; /* Espaciado interno */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+}
+
+nav ul {
+  list-style-type: none; /* Elimina los puntos de la lista */
+  display: flex; /* Flexbox para organizar enlaces en línea */
+  justify-content: flex-end; /* Alinea los enlaces a la derecha */
+  gap: 2rem; /* Espacio entre enlaces */
+}
+
+nav ul li a {
+  text-decoration: none; /* Elimina subrayado en enlaces */
+  color: #333; /* Color de texto oscuro */
+  font-weight: bold; /* Texto en negrita */
+  padding: 0.5rem 1rem; /* Espaciado interno de los enlaces */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: all 0.3s ease; /* Transición para efectos de hover */
+}
+
+nav ul li a:hover {
+  background-color: #A1DD70; /* Fondo verde claro en hover */
+  color: #EF4E4E; /* Color de texto rojo en hover */
+  box-shadow: 0 6px 10px #EF4E4E; /* Sombra roja en hover */
+}
+
+/* Estilos para la tabla */
+.miniatura {
+  width: 30px; /* Ancho de las miniaturas */
+  height: 33px; /* Altura de las miniaturas */
+}
+
+.tabla-moderna {
+  width: 90%; /* Ancho del 90% de la pantalla */
+  margin: 10px auto 80px; /* Centrado horizontal */
+  box-sizing: border-box;
+  border-collapse: separate; /* Bordes de celdas separados */
+  border-spacing: 0; /* Sin espacio entre celdas */
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2); /* Sombra de la tabla */
+  border-radius: 8px; /* Bordes redondeados */
+  overflow: hidden; /* Oculta desbordamiento */
+  background: linear-gradient(45deg, #F6EEC9, #A1DD70); /* Degradado en fondo */
+  animation: tableFadeIn 0.5s ease-out; /* Animación de aparición */
+}
+
+@keyframes tableFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Desplaza hacia abajo */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Posición final */
+  }
+}
+
+.tabla-moderna thead tr {
+  background: linear-gradient(45deg, #EF4E4E, #799351); /* Degradado para encabezado */
+  color: #ffffff; /* Color de texto blanco */
+  text-align: left;
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 1px; /* Espacio entre letras */
+}
+
+.tabla-moderna th,
+.tabla-moderna td {
+  border: 1px solid #F6EEC9; /* Bordes entre celdas */
+  padding: 3px 8px; /* Espaciado reducido */
+}
+
+.tabla-moderna th {
+  font-weight: 500; /* Peso de fuente medio */
+  border-top: 4px solid #EF4E4E; /* Borde superior rojo */
+  border-bottom: 4px solid #EF4E4E; /* Borde inferior rojo */
+}
+
+.tabla-moderna thead th {
+  border-color: rgba(255, 255, 255, 0.2); /* Bordes de color más claro */
+}
+
+.tabla-moderna tbody tr {
+  transition: all 0.3s ease; /* Transición para efectos de hover */
+}
+
+.tabla-moderna tbody tr:nth-of-type(even) {
+  background-color: #F6EEC9; /* Color de fondo alternado en filas pares */
+}
+
+.tabla-moderna tbody tr:last-of-type td {
+  border-bottom-width: 4px; /* Borde inferior más grueso en última fila */
+  border-bottom-color: #EF4E4E; /* Color rojo en borde inferior */
+}
+
+.tabla-moderna tbody tr:hover {
+  background: linear-gradient(45deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1)); /* Degradado de fondo en hover */
+  transform: scale(1.01); /* Escala ligera en hover */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Sombra adicional en hover */
+}
+
+.tabla-moderna th:first-child,
+.tabla-moderna td:first-child {
+  border-left: 3px solid #F6EEC9; /* Borde izquierdo más grueso en primera columna */
+  white-space: nowrap; /* Evita salto de línea en primera columna */
+}
+
+.tabla-moderna tbody tr:hover td:first-child {
+  border-left: 3px solid #EF4E4E; /* Borde izquierdo rojo en hover */
+}
+
+.tabla-moderna td {
+  position: static;
+  overflow: hidden;
+}
+
+/* Efecto de brillo en celdas al pasar el mouse */
+.tabla-moderna td:hover::after {
+  content: '';
+  position: static;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.2); /* Efecto de brillo */
+  animation: cellGlow 0.5s ease-out; /* Animación de brillo */
+}
+
+@keyframes cellGlow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Bordes redondeados en las esquinas de la tabla */
+.tabla-moderna thead th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.tabla-moderna thead th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.tabla-moderna tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+.tabla-moderna tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
+}
+
+/* Estilos para el pie de página */
+footer {
+  background-color: #EF4E4E; /* Fondo rojo */
+  color: white; /* Texto blanco */
+  display: flex; /* Flexbox para organizar elementos */
+  justify-content: space-between; /* Espaciado entre elementos */
+  padding: 0.7rem; /* Espaciado interno */
+  position: fixed; /* Fija el pie de página al final de la pantalla */
+  bottom: 0;
+  width: 100%; /* Ocupa todo el ancho */
+  margin-top: 40px;
+}
+
+/* Decoración adicional en pie de página */
+#pie_pagina::before { content: " ★ ⛰️"; }
+#pie_pagina::after { content: "⛰️ ★ "; }
+#desarrollo { color: rgb(222, 229, 223); } /* Color específico para desarrollo */
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .tabla-moderna {
+    width: 100%; /* La tabla ocupa todo el ancho en móviles */
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  .tabla-moderna th, .tabla-moderna td {
+    padding: 8px; /* Reduce el padding en pantallas pequeñas */
+    font-size: 0.9rem; /* Reduce tamaño de fuente */
+  }
+}
+
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.5rem;
+    }
+
+}

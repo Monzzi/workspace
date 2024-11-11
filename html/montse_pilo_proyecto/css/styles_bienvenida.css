@@ -1,0 +1,186 @@
+/* Reset y estilos generales */
+* {
+  margin: 0; /* Elimina márgenes de todos los elementos */
+  padding: 0; /* Elimina relleno de todos los elementos */
+  box-sizing: border-box; /* Incluye bordes y padding en el cálculo del ancho y alto */
+}
+
+body {
+  font-family: "Gabarito", sans-serif; /* Fuente principal */
+  line-height: 1.6; /* Altura de línea para mejorar la legibilidad */
+  background-color: #EF4E4E; /* Color de fondo de la página */
+  min-height: 100vh; /* Asegura que el body ocupe al menos el 100% del alto de la ventana */
+  display: flex;
+  flex-direction: column; /* Organiza los elementos del body en columna */
+}
+
+/* Header y navegación */
+header {
+  background-color: white; /* Fondo blanco para el encabezado */
+  padding: 1rem; /* Espaciado interno */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera debajo del encabezado */
+}
+
+nav ul {
+  list-style-type: none; /* Elimina los puntos de la lista */
+  display: flex; /* Flexbox para organizar los elementos del menú */
+  justify-content: flex-end; /* Alinea el menú a la derecha */
+  gap: 2rem; /* Espaciado entre elementos de menú */
+}
+
+nav ul li a {
+  text-decoration: none; /* Elimina subrayado de los enlaces */
+  color: #333; /* Color de texto de los enlaces */
+  font-weight: bold; /* Texto en negrita */
+  padding: 0.5rem 1rem; /* Espaciado interno para los enlaces */
+  border-radius: 5px; /* Bordes redondeados en los enlaces */
+  transition: all 0.3s ease; /* Transición suave para cambios en hover */
+}
+
+nav ul li a:hover {
+  background-color: #A1DD70; /* Fondo verde claro en hover */
+  color: #EF4E4E; /* Color de texto rojo en hover */
+  box-shadow: 0 6px 10px #EF4E4E; /* Sombra roja en hover */
+}
+
+/* Main content */
+main {
+  display: flex; /* Flexbox para organizar el contenido principal */
+  gap: 2rem; /* Espaciado entre columnas */
+  align-items: flex-start; /* Alinea el contenido al inicio del eje vertical */
+  max-width: 1400px; /* Ancho máximo para el contenido */
+  margin: 0 auto; /* Centra el main horizontalmente */
+  padding: 1rem; /* Espaciado interno en el main */
+}
+
+/* Estilos para el contenedor de bienvenida */
+.text-container {
+  flex: 1; /* Ocupa el espacio restante en main */
+  background-color: white; /* Fondo blanco */
+  padding: 1rem; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+h2 {
+  color: #EF4E4E; /* Color rojo para un h2 */
+}
+
+/* Estilos para el contenedor derecho (slider y logo) */
+.right-column {
+  display: flex; /* Flexbox para organizar contenido */
+  flex-direction: column; /* Organiza los elementos en columna */
+  gap: 1rem; /* Espaciado entre elementos de columna */
+  align-items: center; /* Centra los elementos */
+  width: 45%; /* Ancho de la columna derecha */
+}
+
+/* Slider */
+.slider {
+  width: 100%; /* Ancho completo del contenedor */
+  height: 350px; /* Altura del slider */
+  border-radius: 10px; /* Bordes redondeados */
+  overflow: hidden; /* Oculta el contenido que desborda */
+  background-color: #EF4E4E; /* Fondo rojo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para el slider */
+}
+
+.slides {
+  width: 700%; /* Ancho total para incluir todas las imágenes */
+  height: 100%; /* Altura completa */
+  display: flex; /* Flexbox para organizar las imágenes en línea */
+  animation: slideAnimation 42s linear infinite; /* Animación continua para desplazarse */
+}
+
+.slide {
+  width: 14.285%; /* Ancho de cada imagen (1/7 del total) */
+  height: 100%; /* Altura completa */
+  flex-shrink: 0; /* Evita que el ancho se reduzca */
+}
+
+.slide img {
+  width: 100%; /* Imagen ocupa todo el contenedor */
+  height: 100%; /* Imagen ocupa toda la altura */
+  object-fit: cover; /* Ajuste de imagen para cubrir todo el espacio */
+}
+
+/* Pausa el slider al pasar el mouse */
+.slider:hover .slides {
+  animation-play-state: paused; /* Pausa la animación en hover */
+}
+
+/* Keyframes para la animación de desplazamiento del slider */
+@keyframes slideAnimation {
+  0% { transform: translateX(0); }
+  16.666% { transform: translateX(-14.285%); }
+  33.332% { transform: translateX(-28.57%); }
+  49.998% { transform: translateX(-42.855%); }
+  66.664% { transform: translateX(-57.14%); }
+  83.33% { transform: translateX(-71.425%); }
+  100% { transform: translateX(-85.71%); }
+}
+
+/* Logo animado */
+.logo-animado {
+  display: flex; /* Flexbox para organizar el logo */
+  justify-content: center; /* Centra el logo horizontalmente */
+  align-items: center; /* Centra el logo verticalmente */
+}
+
+#logo {
+  max-width: 200px; /* Ancho máximo del logo */
+  animation: float 3s ease-in-out infinite; /* Animación de "flotar" continua */
+}
+
+/* Keyframes para la animación de "flotar" del logo */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+/* Footer */
+footer {
+  background-color: #EF4E4E; /* Fondo rojo */
+  color: white; /* Texto blanco */
+  display: flex; /* Flexbox para organizar el contenido */
+  justify-content: space-between; /* Espacia los elementos a los extremos */
+  padding: 0.7rem; /* Espaciado interno */
+  position: fixed; /* Fija el pie de página al fondo de la pantalla */
+  bottom: 0; /* Ubica el pie de página al final */
+  width: 100%; /* Ancho completo del pie de página */
+}
+
+/* Decoración para el pie de página */
+#pie_pagina::before {
+  content: " ★ ⛰️"; /* Agrega decoración antes del texto */
+}
+#pie_pagina::after {
+  content: "⛰️ ★ "; /* Agrega decoración después del texto */
+}
+#desarrollo {
+  color: rgb(222, 229, 223); /* Color de texto específico para #desarrollo */
+}
+
+/* Estilos responsivos para pantallas menores a 1024px */
+@media (max-width: 1024px) {
+  main {
+    flex-direction: column;
+  }
+  .slider, .text-container, .right-column {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* Coloca los elementos en columna en pantallas pequeñas */
+    align-items: flex-start; /* Alinea los elementos a la izquierda */
+    gap: 1rem; /* Reduce el espacio entre los elementos del menú */
+    padding: 0.5rem 1rem; /* Agrega un poco de espacio alrededor del menú en móviles */
+  }
+  .right-column {
+    width: 100%;
+  }
+}
+
