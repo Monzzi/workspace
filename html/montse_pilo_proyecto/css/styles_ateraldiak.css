@@ -1,52 +1,51 @@
-/* Reset y estilos generales */
 * {
-  margin: 0px; /* Elimina los márgenes de todos los elementos */
-  padding: 0px; /* Elimina el relleno de todos los elementos */
-  box-sizing: border-box; /* Incluye bordes y padding en el cálculo de ancho y alto */
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: "Gabarito", sans-serif; /* Fuente principal */
-  line-height: 1.6; /* Altura de línea para mejor legibilidad */
-  background-color: #f3f3f3; /* Color de fondo general */
-  min-height: 100vh; /* Asegura que el body ocupe al menos toda la ventana */
+  font-family: "Gabarito", sans-serif;
+  background-color: #f3f3f3;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column; /* Organiza el contenido en columna */
+  flex-direction: column;
 }
 
 /* Estilos para el encabezado */
 header {
-  background-color: white; /* Fondo blanco en el header */
-  padding: 1rem; /* Espaciado interno */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilos para el menú de navegación */
 nav ul {
-  list-style-type: none; /* Elimina los puntos de la lista */
-  display: flex; /* Flexbox para organizar enlaces en línea */
-  justify-content: flex-end; /* Alinea los enlaces a la derecha */
-  gap: 2rem; /* Espacio entre enlaces */
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
 }
 
 nav ul li a {
-  text-decoration: none; /* Elimina subrayado en enlaces */
-  color: #333; /* Color de texto oscuro */
-  font-weight: bold; /* Texto en negrita */
-  padding: 0.5rem 1rem; /* Espaciado interno de los enlaces */
-  border-radius: 5px; /* Bordes redondeados */
-  transition: all 0.3s ease; /* Transición para efectos de hover */
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-  background-color: #A1DD70; /* Fondo verde claro en hover */
-  color: #EF4E4E; /* Color de texto rojo en hover */
-  box-shadow: 0 6px 10px #EF4E4E; /* Sombra roja en hover */
+  background-color: #A1DD70;
+  color: #EF4E4E;
+  box-shadow: 0 6px 10px #EF4E4E;
 }
 
 /* Estilos para la tabla */
 .miniatura {
-  width: 30px; /* Ancho de las miniaturas */
-  height: 33px; /* Altura de las miniaturas */
+  width: 30px; /* Ancho de los iconos miniaturas */
+  height: 33px; /* Altura de los iconos miniaturas */
 }
 
 .tabla-moderna {
@@ -62,6 +61,7 @@ nav ul li a:hover {
   animation: tableFadeIn 0.5s ease-out; /* Animación de aparición */
 }
 
+/* Animación de aparición de la tabla */
 @keyframes tableFadeIn {
   from {
     opacity: 0;
@@ -76,7 +76,7 @@ nav ul li a:hover {
 .tabla-moderna thead tr {
   background: linear-gradient(45deg, #EF4E4E, #799351); /* Degradado para encabezado */
   color: #ffffff; /* Color de texto blanco */
-  text-align: left;
+  text-align: center;
   text-transform: uppercase; /* Texto en mayúsculas */
   letter-spacing: 1px; /* Espacio entre letras */
 }
@@ -171,12 +171,12 @@ nav ul li a:hover {
 
 /* Estilos para el pie de página */
 footer {
-  background-color: #EF4E4E; /* Fondo rojo */
-  color: white; /* Texto blanco */
-  display: flex; /* Flexbox para organizar elementos */
-  justify-content: space-between; /* Espaciado entre elementos */
-  padding: 0.7rem; /* Espaciado interno */
-  position: fixed; /* Fija el pie de página al final de la pantalla */
+  background-color: #EF4E4E;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem;
+  position: fixed;
   bottom: 0;
   width: 100%; /* Ocupa todo el ancho */
   margin-top: 40px;
@@ -185,28 +185,29 @@ footer {
 /* Decoración adicional en pie de página */
 #pie_pagina::before { content: " ★ ⛰️"; }
 #pie_pagina::after { content: "⛰️ ★ "; }
-#desarrollo { color: rgb(222, 229, 223); } /* Color específico para desarrollo */
+#desarrollo { color: rgb(222, 229, 223); }
 
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
   .tabla-moderna {
-    width: 100%; /* La tabla ocupa todo el ancho en móviles */
+    width: 100%;
     margin: 20px auto;
     padding: 10px;
   }
 
   .tabla-moderna th, .tabla-moderna td {
-    padding: 8px; /* Reduce el padding en pantallas pequeñas */
-    font-size: 0.9rem; /* Reduce tamaño de fuente */
+    padding: 8px;
+    font-size: 0.9rem;
   }
-}
 
-  @media (max-width: 768px) {
-    nav ul {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 0.5rem;
-    }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
 
+  footer {
+    position: relative;
+  }
 }

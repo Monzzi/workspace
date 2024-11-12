@@ -6,20 +6,18 @@
 
 body {
   background-image: url('../img/001-1970JUN7Saioa.jpg');
-  background-size: cover; /* Hace que la imagen cubra toda el área sin espacios en blanco */
-  background-position: center center; /* Centra la imagen tanto horizontal como verticalmente */
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Fija la imagen al fondo */
-  height: 100vh; /* Cubre toda la altura de la ventana */
-  width: 100%; /* Cubre todo el ancho de la pantalla */
-  margin: 0; /* Elimina los márgenes para evitar cualquier desplazamiento */
+  height: 100vh;
+  width: 100%;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Gabarito", serif;
 }
 
-/* Contenedor del login */
 .login-container {
   display: flex;
   justify-content: center;
@@ -56,9 +54,6 @@ form input {
   box-shadow: 0 4px 8px rgba(13, 68, 13, 0.2);
 }
 
-  /* Estilo para el formulario */
-
-
 .button {
   display: inline-block;
   text-decoration: none;
@@ -70,7 +65,6 @@ form input {
   color: black;
   font-size: 16px;
   cursor: pointer;
-  justify-content: center;
   text-align: center;
 }
 

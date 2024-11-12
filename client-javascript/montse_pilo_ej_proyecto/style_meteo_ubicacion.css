@@ -1,0 +1,17 @@
+body {
+  display: flex;
+  font-family: 'Roboto', Arial, sans-serif;
+  background-image: url(background_meteo.webp); /* Generada con DALL-E. */
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 40px;
+}
+.highlighted-text {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px 10px;
+  color: #333;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 350px;
+}

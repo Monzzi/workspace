@@ -13,7 +13,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px; /* Espacio adicional inferior */
+  margin-bottom: 20px;
 }
 
 /* Encabezado */
@@ -50,11 +50,11 @@ nav ul li a:hover {
 .contenedor-grid {
   display: grid;
   gap: 1rem;
-  margin-top: 10px; /* Espacio adicional superior */
+  margin-top: 10px;
   padding: 1rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding-bottom: 30px; /* Añade espacio al final para que el grid se vea extendido */
+  padding-bottom: 30px;
 }
 
 /* Cuadrícula de contenido */
@@ -70,7 +70,7 @@ nav ul li a:hover {
   background-color: #F6EEC9;
   opacity: 0.9;
   border-radius: 15px;
-  margin-bottom: 20px; /* Espacio extra entre el contenido y el borde del grid */
+  margin-bottom: 20px;
 }
 
 /* Texto en la cuadrícula */
@@ -182,7 +182,6 @@ footer {
 
 /* Diseño Responsive */
 @media (max-width: 768px) {
-  /* Cambia la cuadrícula a una columna en pantallas pequeñas */
   .grid-contenidos {
     grid-template-areas:
       "texto"
@@ -200,5 +199,9 @@ footer {
 
   .button {
     width: 100%; /* Botón ocupa el ancho completo */
+  }
+
+  footer {
+    position: relative;
   }
 }
