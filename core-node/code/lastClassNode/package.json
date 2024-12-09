@@ -1,0 +1,13 @@
+{
+  "name": "lastclassnode",
+  "version": "1.0.0",
+  "description": "This is a simple core node that can be used to create a new basic project.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --watch index.js",
+    "test": "echo \"Error: no test specifi"
+  },
+  "keywords": [],
+  "author": "Monzzi",
+  "license": "ISC"
+}
