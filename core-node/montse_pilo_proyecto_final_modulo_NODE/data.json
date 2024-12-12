@@ -1,0 +1,26 @@
+
+{
+  "transport": {
+    "avión": 0.15,
+    "coche_combustión": 0.12,
+    "coche_eléctrico": 0.05,
+    "tren": 0.05,
+    "autobús": 0.03,
+    "bicicleta": 0.001
+  },
+  "accommodation": {
+    "hotel": { "water": 400 },
+    "hostal": { "water": 200 },
+    "casa_rural": { "water": 150 },
+    "camping": { "water": 80 }
+  },
+  "diet": {
+    "vegetariana": 300,
+    "omnivora": 500,
+    "vegana": 250
+  },
+  "activities": {
+    "ecoturismo": 0.3,
+    "actividad_estandard": 0.8
+  }
+}
